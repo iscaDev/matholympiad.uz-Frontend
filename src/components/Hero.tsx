@@ -47,7 +47,7 @@ const Hero = () => {
           <div className="animate-fade-in-up">
             <h1 className="text-5xl md:text-7xl font-display font-bold mb-6 leading-tight">
               <span className="bg-gradient-secondary bg-clip-text text-transparent">
-                Math
+                Mathematics
               </span>
               <br />
               <span>Olympiad</span>
