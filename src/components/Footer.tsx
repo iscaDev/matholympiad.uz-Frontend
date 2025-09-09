@@ -23,6 +23,7 @@ const Footer = () => {
     { name: 'Instagram', icon: Instagram, href: '#', color: 'hover:text-pink-600' },
     { name: 'YouTube', icon: Youtube, href: '#', color: 'hover:text-red-600' },
     { name: 'LinkedIn', icon: Linkedin, href: '#', color: 'hover:text-blue-700' },
+    { name: 'Telegram', icon: Telegram, href: '#', color: 'hover:text-blue-700' },
   ];
 
   return (
@@ -56,7 +57,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-3 text-sm">
                 <Mail className="w-4 h-4 text-secondary" />
-                <span>contact@matholympiad.uz</span>
+                <span>matholympiad.uz@gmail.com</span>
               </div>
             </div>
           </div>
