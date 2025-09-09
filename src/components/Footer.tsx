@@ -1,4 +1,4 @@
-import { Calculator, Mail, Phone, MapPin, Facebook, Instagram, Youtube, Linkedin } from 'lucide-react';
+import { Calculator, Mail, Phone, MapPin, Facebook, Instagram, Youtube, Linkedin, Telegram } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Footer = () => {
