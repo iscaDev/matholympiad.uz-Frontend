@@ -62,10 +62,10 @@ export default function TestOverviewPage() {
                       className="mb-3 w-full max-w-full max-h-80 object-contain rounded"
                     />
                   ) : (
-                    <p className="font-semibold mb-3">{idx + 1}. {q.question}</p>
+                    <p className="font-semibold mb-3">{idx + 1}. {q.question_text}</p>
                   )}
 
-                {/* Closed question */}
+                {/* Closed question  */}
                 {q.options ? (
                   <div className="grid grid-cols-1 gap-2">
                     {["a", "b", "c", "d"].map((opt) => {

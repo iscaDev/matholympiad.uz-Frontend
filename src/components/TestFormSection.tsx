@@ -105,7 +105,7 @@ export default function TestPage() {
       test_type: q.test_type, 
     }))
 
-    fetch(`${BASE_URL}/math-tests/check-answers/`, {
+    fetch(`${BASE_URL}/math-tests/check-answers/${id}/`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
