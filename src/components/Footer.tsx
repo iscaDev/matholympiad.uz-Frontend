@@ -1,4 +1,4 @@
-import { Calculator, Mail, Phone, MapPin, Facebook, Instagram, Youtube, Linkedin, Telegram } from 'lucide-react';
+import { Calculator, Mail, Phone, MapPin, Facebook, Instagram, Youtube, Linkedin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Footer = () => {
@@ -23,7 +23,6 @@ const Footer = () => {
     { name: 'Instagram', icon: Instagram, href: '#', color: 'hover:text-pink-600' },
     { name: 'YouTube', icon: Youtube, href: '#', color: 'hover:text-red-600' },
     { name: 'LinkedIn', icon: Linkedin, href: '#', color: 'hover:text-blue-700' },
-    { name: 'Telegram', icon: Telegram, href: '#', color: 'hover:text-blue-700' },
   ];
 
   return (
