@@ -22,7 +22,7 @@ const Footer = () => {
     { name: 'Facebook', icon: Facebook, href: '#', color: 'hover:text-blue-600' },
     { name: 'Instagram', icon: Instagram, href: '#', color: 'hover:text-pink-600' },
     { name: 'YouTube', icon: Youtube, href: '#', color: 'hover:text-red-600' },
-    { name: 'LinkedIn', icon: Linkedin, href: '#', color: 'hover:text-blue-700' },
+    { name: 'LinkedIn', icon: Linkedin, href: 'https://www.linkedin.com/company/matholympiad-uz/', color: 'hover:text-blue-700' },
   ];
 
   return (
