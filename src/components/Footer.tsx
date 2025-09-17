@@ -58,6 +58,10 @@ const Footer = () => {
                 <Mail className="w-4 h-4 text-secondary" />
                 <span>matholympiad.uz@gmail.com</span>
               </div>
+              <div className="flex items-center space-x-3 text-sm">
+                <Telegram className="w-4 h-4 text-secondary" />
+                <span>@math_olympiaduz</span>
+              </div>
             </div>
           </div>
 
