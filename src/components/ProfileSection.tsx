@@ -66,7 +66,7 @@ export default function ProfilePage() {
                   <p>❌ Noto‘g‘ri javoblar: {r.wrong_answers}</p>
                   <p>➖ Javobsiz: {r.unanswered}</p>
                   <p className="mt-2 font-semibold">
-                    🔥 Ball: <span className="text-blue-600">{r.score}/{r.total_score}</span>
+                    🔥 Ball: <span className="text-blue-600">{r.score.toFixed(2)}/{r.total_score.toFixed(2)}</span>
                   </p>
                 </div>
 
