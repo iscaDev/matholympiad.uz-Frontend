@@ -53,7 +53,11 @@ const Navbar = () => {
               <img src={logo} alt="Logo" className="w-20" />
             </Link>
             <div className="hidden sm:block">
-              <h1 className="text-xl font-display font-bold text-primary">MathOlympiad.Uz</h1>
+              <h1 className="text-xl font-display font-bold">
+                <span className="text-black">Math</span>
+                <span className="text-primary">Olympiad</span>
+                <span className="text-black">.Uz</span>
+              </h1>
             </div>
           </div>
 
