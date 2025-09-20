@@ -49,7 +49,9 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center space-x-3">
-            <img src={logo} alt="Logo" className="w-20" href="https://www.matholympiad.uz/home" />
+            <Link to="/home">
+              <img src={logo} alt="Logo" className="w-20" />
+            </Link>
             <div className="hidden sm:block">
               <h1 className="text-xl font-display font-bold text-primary">MathOlympiad.Uz</h1>
             </div>
