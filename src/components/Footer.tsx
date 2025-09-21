@@ -117,17 +117,6 @@ const Footer = () => {
                 ))}
               </div> */}
               <div className="flex space-x-3">
-  {/* Facebook */}
-  <a
-    href="#"
-    className="text-primary-foreground/60 hover:text-blue-600 transition-colors duration-300 hover:scale-110"
-    title="Facebook"
-  >
-    <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-      <path d="M22.675 0h-21.35C.597 0 0 .598 0 1.333v21.333C0 23.402.597 24 1.325 24h11.494V14.708h-3.13v-3.62h3.13V8.41c0-3.1 1.894-4.788 4.659-4.788 1.325 0 2.464.099 2.797.143v3.24h-1.918c-1.505 0-1.795.716-1.795 1.764v2.312h3.59l-.467 3.62h-3.123V24h6.116C23.403 24 24 23.402 24 22.667V1.333C24 .598 23.403 0 22.675 0z"/>
-    </svg>
-  </a>
-
   {/* Instagram */}
   <a
     href="#"
@@ -163,7 +152,7 @@ const Footer = () => {
 
   {/* Telegram */}
   <a
-    href="https://t.me/matholympiaduz"
+    href="https://t.me/math_olympiaduz"
     className="text-primary-foreground/60 hover:text-sky-500 transition-colors duration-300 hover:scale-110"
     title="Telegram"
   >
