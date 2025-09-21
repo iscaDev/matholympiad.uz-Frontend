@@ -23,21 +23,6 @@ const Footer = () => {
     { name: 'Instagram', icon: Instagram, href: '#', color: 'hover:text-pink-600' },
     { name: 'YouTube', icon: Youtube, href: '#', color: 'hover:text-red-600' },
     { name: 'LinkedIn', icon: Linkedin, href: 'https://www.linkedin.com/company/matholympiad-uz/', color: 'hover:text-blue-700' },
-    <a 
-      href="https://t.me/matholympiaduz" 
-      className="text-primary-foreground/60 hover:text-sky-500 transition-colors duration-300 hover:scale-110"
-      title="Telegram"
-    >
-      <svg 
-        xmlns="http://www.w3.org/2000/svg" 
-        className="w-5 h-5" 
-        viewBox="0 0 24 24" 
-        fill="currentColor"
-      >
-        <path d="M9.999 15.17l-.39 3.93c.56 0 .8-.24 1.09-.52l2.62-2.48 5.43 3.95c.99.55 1.7.26 1.95-.91l3.54-16.62v-.01c.32-1.49-.54-2.07-1.51-1.71L1.43 9.64c-1.46.57-1.44 1.39-.25 1.76l5.49 1.71 12.7-7.99c.6-.36 1.15-.16.7.23l-10.33 9.82z"/>
-      </svg>
-    </a>
-
   ];
 
   return (
@@ -119,7 +104,7 @@ const Footer = () => {
             {/* Social Links */}
             <div className="flex items-center space-x-4">
               <span className="text-sm text-primary-foreground/80">Ijtimoiy tarmoqlar:</span>
-              <div className="flex space-x-3">
+              {/* <div className="flex space-x-3">
                 {socialLinks.map((social) => (
                   <a
                     key={social.name}
@@ -130,7 +115,64 @@ const Footer = () => {
                     <social.icon className="w-5 h-5" />
                   </a>
                 ))}
-              </div>
+              </div> */}
+              <div className="flex space-x-3">
+  {/* Facebook */}
+  <a
+    href="#"
+    className="text-primary-foreground/60 hover:text-blue-600 transition-colors duration-300 hover:scale-110"
+    title="Facebook"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M22.675 0h-21.35C.597 0 0 .598 0 1.333v21.333C0 23.402.597 24 1.325 24h11.494V14.708h-3.13v-3.62h3.13V8.41c0-3.1 1.894-4.788 4.659-4.788 1.325 0 2.464.099 2.797.143v3.24h-1.918c-1.505 0-1.795.716-1.795 1.764v2.312h3.59l-.467 3.62h-3.123V24h6.116C23.403 24 24 23.402 24 22.667V1.333C24 .598 23.403 0 22.675 0z"/>
+    </svg>
+  </a>
+
+  {/* Instagram */}
+  <a
+    href="#"
+    className="text-primary-foreground/60 hover:text-pink-600 transition-colors duration-300 hover:scale-110"
+    title="Instagram"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5zm4.25 4.25a5.25 5.25 0 1 1 0 10.5a5.25 5.25 0 0 1 0-10.5zm0 1.5a3.75 3.75 0 1 0 0 7.5a3.75 3.75 0 0 0 0-7.5zm5.25-.75a.75.75 0 1 1 0 1.5a.75.75 0 0 1 0-1.5z"/>
+    </svg>
+  </a>
+
+  {/* YouTube */}
+  <a
+    href="#"
+    className="text-primary-foreground/60 hover:text-red-600 transition-colors duration-300 hover:scale-110"
+    title="YouTube"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M19.615 3.184C20.403 3.39 21.09 4.09 21.296 4.878c.488 1.814.488 5.59.488 5.59s0 3.776-.488 5.59c-.206.788-.893 1.488-1.681 1.694C18.144 18 12 18 12 18s-6.144 0-7.615-.248c-.788-.206-1.475-.906-1.681-1.694C2.216 14.244 2.216 10.468 2.216 10.468s0-3.776.488-5.59c.206-.788.893-1.488 1.681-1.694C5.856 3 12 3 12 3s6.144 0 7.615.184zM10 8.75v5l4.5-2.5-4.5-2.5z"/>
+    </svg>
+  </a>
+
+  {/* LinkedIn */}
+  <a
+    href="https://www.linkedin.com/company/matholympiad-uz/"
+    className="text-primary-foreground/60 hover:text-blue-700 transition-colors duration-300 hover:scale-110"
+    title="LinkedIn"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M19 0h-14c-2.762 0-5 2.238-5 5v14c0 2.762 2.238 5 5 5h14c2.762 0 5-2.238 5-5v-14c0-2.762-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.783-1.75-1.749s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.749-1.75 1.749zm13.5 11.268h-3v-5.604c0-1.337-.027-3.061-1.866-3.061-1.867 0-2.154 1.459-2.154 2.963v5.702h-3v-10h2.879v1.367h.041c.402-.761 1.382-1.562 2.848-1.562 3.047 0 3.611 2.007 3.611 4.618v5.577z"/>
+    </svg>
+  </a>
+
+  {/* Telegram */}
+  <a
+    href="https://t.me/matholympiaduz"
+    className="text-primary-foreground/60 hover:text-sky-500 transition-colors duration-300 hover:scale-110"
+    title="Telegram"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M9.999 15.17l-.39 3.93c.56 0 .8-.24 1.09-.52l2.62-2.48 5.43 3.95c.99.55 1.7.26 1.95-.91l3.54-16.62v-.01c.32-1.49-.54-2.07-1.51-1.71L1.43 9.64c-1.46.57-1.44 1.39-.25 1.76l5.49 1.71 12.7-7.99c.6-.36 1.15-.16.7.23l-10.33 9.82z"/>
+    </svg>
+  </a>
+</div>
+
             </div>
 
             {/* Copyright */}
