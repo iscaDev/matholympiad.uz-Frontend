@@ -1,4 +1,4 @@
-import { Calculator, Mail, Phone, MapPin, Facebook, Instagram, Youtube, Linkedin, Telegram } from 'lucide-react';
+import { Calculator, Mail, Phone, MapPin, Facebook, Instagram, Youtube, Linkedin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Footer = () => {
@@ -23,7 +23,21 @@ const Footer = () => {
     { name: 'Instagram', icon: Instagram, href: '#', color: 'hover:text-pink-600' },
     { name: 'YouTube', icon: Youtube, href: '#', color: 'hover:text-red-600' },
     { name: 'LinkedIn', icon: Linkedin, href: 'https://www.linkedin.com/company/matholympiad-uz/', color: 'hover:text-blue-700' },
-    { name: 'Telegram', icon: Telegram, href: 'https://t.me/math_olympiaduz', color: 'hover:text-sky-500' },
+    <a 
+      href="https://t.me/matholympiaduz" 
+      className="text-primary-foreground/60 hover:text-sky-500 transition-colors duration-300 hover:scale-110"
+      title="Telegram"
+    >
+      <svg 
+        xmlns="http://www.w3.org/2000/svg" 
+        className="w-5 h-5" 
+        viewBox="0 0 24 24" 
+        fill="currentColor"
+      >
+        <path d="M9.999 15.17l-.39 3.93c.56 0 .8-.24 1.09-.52l2.62-2.48 5.43 3.95c.99.55 1.7.26 1.95-.91l3.54-16.62v-.01c.32-1.49-.54-2.07-1.51-1.71L1.43 9.64c-1.46.57-1.44 1.39-.25 1.76l5.49 1.71 12.7-7.99c.6-.36 1.15-.16.7.23l-10.33 9.82z"/>
+      </svg>
+    </a>
+
   ];
 
   return (
