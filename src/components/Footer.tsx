@@ -116,7 +116,7 @@ const Footer = () => {
                   </a>
                 ))}
               </div> */}
-              <div className="flex space-x-3">
+<div className="flex space-x-3">
   {/* Instagram */}
   <a
     href="#"
@@ -161,7 +161,6 @@ const Footer = () => {
     </svg>
   </a>
 </div>
-
             </div>
 
             {/* Copyright */}
