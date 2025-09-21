@@ -30,7 +30,11 @@ const Footer = () => {
       {/* Main Footer */}
       <div className="container mx-auto px-4 py-16">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          
+          <div className="flex justify-end mb-6">
+            <button onClick={() => setLang(lang === 'uz' ? 'en' : 'uz')} className="px-3 py-1 bg-secondary text-sm rounded-md">
+              {lang === 'uz' ? 'English' : 'O‘zbekcha'}
+            </button>
+          </div>
           {/* Brand Section */}
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-3 mb-6">
