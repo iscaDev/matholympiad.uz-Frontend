@@ -103,6 +103,25 @@ const Hero = () => {
         </svg>
       </div>
     </section>
+    <div className="grid md:grid-cols-2 gap-6 mt-8">
+        <Card className="bg-white/80 border-0 shadow-lg">
+                <CardContent className="p-6">
+                  <Quote className="w-8 h-8 text-purple-500 mb-4" />
+                  <blockquote className="text-lg font-medium text-gray-800 leading-relaxed italic">
+                    "Matematika barcha insonlar uchun buyuk motivatordir, chunki uning karyerasi noldan boshlanadi va hech qachon tugamaydi"
+                  </blockquote>
+                </CardContent>
+              </Card>
+              
+              <Card className="bg-white/80 border-0 shadow-lg">
+                <CardContent className="p-6">
+                  <Quote className="w-8 h-8 text-purple-500 mb-4" />
+                  <blockquote className="text-lg font-medium text-gray-800 leading-relaxed italic">
+                    "Matematika barcha fanlarning onasi"
+                  </blockquote>
+                </CardContent>
+        </Card>
+    </div>
   );
 };
 
