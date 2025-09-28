@@ -109,12 +109,13 @@ const Hero = () => {
   <div className="container mx-auto px-6 max-w-4xl space-y-16">
 
     {/* First Quote */}
-    <div className="relative p-10 rounded-3xl shadow-xl bg-white/70 backdrop-blur-sm border border-primary/10 hover:scale-[1.02] transition-transform duration-300">
-      <span className="block text-6xl text-secondary opacity-80 mb-6">“</span>
-      <blockquote className="relative text-2xl md:text-3xl font-semibold italic text-center leading-relaxed bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
-        Matematika barcha insonlar uchun buyuk motivatordir, chunki uning karyerasi noldan boshlanadi va hech qachon tugamaydi.
-      </blockquote>
-    </div>
+<div className="relative p-10 rounded-3xl shadow-xl bg-white/80 backdrop-blur-md border border-primary/10 hover:scale-[1.02] transition-transform duration-300">
+  <span className="absolute top-6 left-6 text-7xl text-secondary opacity-20">“</span>
+  <blockquote className="relative font-[Playfair_Display] text-2xl md:text-3xl italic text-center leading-relaxed text-gray-800">
+    Matematika barcha insonlar uchun buyuk motivatordir, chunki uning karyerasi noldan boshlanadi va hech qachon tugamaydi.
+  </blockquote>
+</div>
+
 
     {/* Second Quote */}
     <div className="relative p-10 rounded-3xl shadow-xl bg-white/70 backdrop-blur-sm border border-primary/10 hover:scale-[1.02] transition-transform duration-300">
