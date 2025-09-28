@@ -102,28 +102,29 @@ const Hero = () => {
           <path d="M0,120 C200,80 400,40 600,60 C800,80 1000,100 1200,60 L1200,120 Z" fill="currentColor" />
         </svg>
       </div>
-    </section>
-    {/* Quotes Section Below Wave */}
-    <section className="relative bg-background py-20">
-      <div className="container mx-auto px-6 max-w-5xl">
-        <div className="grid gap-10 md:grid-cols-2">
-      
-          {/* First Quote */}
-          <div className="bg-primary/5 rounded-2xl p-8 shadow-lg border border-primary/10 hover:scale-105 transition-transform duration-300">
-            <p className="text-xl md:text-2xl font-medium italic text-center text-primary leading-relaxed">
-              “Matematika barcha insonlar uchun buyuk motivatordir, chunki uning karyerasi noldan boshlanadi va hech qachon tugamaydi.”
-            </p>
-          </div>
-      
-          {/* Second Quote */}
-          <div className="bg-primary/5 rounded-2xl p-8 shadow-lg border border-primary/10 hover:scale-105 transition-transform duration-300">
-            <p className="text-xl md:text-2xl font-medium italic text-center text-primary leading-relaxed">
-              “Matematika barcha fanlarning onasidir.”
-            </p>
-          </div>
+      {/* Quotes Section Inside Hero */}
+      <div className="relative bg-background py-20">
+        <div className="container mx-auto px-6 max-w-5xl">
+          <div className="grid gap-10 md:grid-cols-2">
+            
+            {/* First Quote */}
+            <div className="bg-primary/5 rounded-2xl p-8 shadow-lg border border-primary/10 hover:scale-105 transition-transform duration-300">
+              <p className="text-xl md:text-2xl font-medium italic text-center text-primary leading-relaxed">
+                “Matematika barcha insonlar uchun buyuk motivatordir, chunki uning karyerasi noldan boshlanadi va hech qachon tugamaydi.”
+              </p>
+            </div>
+            
+            {/* Second Quote */}
+            <div className="bg-primary/5 rounded-2xl p-8 shadow-lg border border-primary/10 hover:scale-105 transition-transform duration-300">
+              <p className="text-xl md:text-2xl font-medium italic text-center text-primary leading-relaxed">
+                “Matematika barcha fanlarning onasidir.”
+              </p>
+            </div>
 
+          </div>
         </div>
       </div>
+
     </section>
 
   );
