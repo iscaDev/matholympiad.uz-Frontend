@@ -102,30 +102,26 @@ const Hero = () => {
           <path d="M0,120 C200,80 400,40 600,60 C800,80 1000,100 1200,60 L1200,120 Z" fill="currentColor" />
         </svg>
       </div>
-
-      {/* Quotes Section */}
-      <div className="relative z-10 bg-background/70 backdrop-blur-sm py-20 mt-20">
-        <div className="container mx-auto px-6 max-w-3xl space-y-10">
-
-          {/* First Quote */}
-          <div className="p-8 rounded-2xl border border-primary/30 shadow-lg bg-gradient-to-r from-secondary/20 via-background to-secondary/20 hover:scale-105 transition-transform duration-300">
-            <span className="text-6xl text-secondary opacity-40 block mb-4">“</span>
-            <p className="text-xl md:text-2xl font-semibold italic text-center text-primary leading-relaxed">
-              Matematika barcha insonlar uchun buyuk motivatordir, chunki uning karyerasi noldan boshlanadi va hech qachon tugamaydi.
-            </p>
-          </div>
-
-          {/* Second Quote */}
-          <div className="p-8 rounded-2xl border border-primary/30 shadow-lg bg-gradient-to-r from-secondary/20 via-background to-secondary/20 hover:scale-105 transition-transform duration-300">
-            <span className="text-6xl text-secondary opacity-40 block mb-4">“</span>
-            <p className="text-xl md:text-2xl font-semibold italic text-center text-primary leading-relaxed">
-              Matematika barcha fanlarning onasidir.
-            </p>
-          </div>
-
-        </div>
+      {/* Additional Quotes */}
+      <div className="grid md:grid-cols-2 gap-6 mt-8">
+          <Card className="bg-white/80 border-0 shadow-lg">
+            <CardContent className="p-6">
+                  <Quote className="w-8 h-8 text-purple-500 mb-4" />
+                  <blockquote className="text-lg font-medium text-gray-800 leading-relaxed italic">
+                    "Matematika barcha insonlar uchun buyuk motivatordir, chunki uning karyerasi noldan boshlanadi va hech qachon tugamaydi"
+                  </blockquote>
+            </CardContent>
+          </Card>
+              
+          <Card className="bg-white/80 border-0 shadow-lg">
+            <CardContent className="p-6">
+                  <Quote className="w-8 h-8 text-purple-500 mb-4" />
+                  <blockquote className="text-lg font-medium text-gray-800 leading-relaxed italic">
+                    "Matematika barcha fanlarning onasi"
+                  </blockquote>
+            </CardContent>
+          </Card>
       </div>
-
     </section>
 
   );
