@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Users, BookOpen, FileText, Brain } from 'lucide-react';
+import { Card, CardContent } from '@/components/ui/card';
 import heroImage from '@/assets/hero-math.jpg';
 
 const Hero = () => {
