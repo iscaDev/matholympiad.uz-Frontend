@@ -103,6 +103,29 @@ const Hero = () => {
         </svg>
       </div>
     </section>
+    {/* Quotes Section Below Wave */}
+<section className="relative bg-gradient-to-b from-background to-secondary/10 py-24">
+  <div className="container mx-auto px-6 max-w-4xl space-y-16">
+
+    {/* First Quote */}
+    <div className="relative p-10 rounded-3xl shadow-xl bg-white/70 backdrop-blur-sm border border-primary/10 hover:scale-[1.02] transition-transform duration-300">
+      <span className="absolute -top-6 -left-4 text-7xl text-secondary opacity-30">“</span>
+      <blockquote className="relative text-2xl md:text-3xl font-semibold italic text-center leading-relaxed bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
+        Matematika barcha insonlar uchun buyuk motivatordir, chunki uning karyerasi noldan boshlanadi va hech qachon tugamaydi.
+      </blockquote>
+    </div>
+
+    {/* Second Quote */}
+    <div className="relative p-10 rounded-3xl shadow-xl bg-white/70 backdrop-blur-sm border border-primary/10 hover:scale-[1.02] transition-transform duration-300">
+      <span className="absolute -top-6 -left-4 text-7xl text-secondary opacity-30">“</span>
+      <blockquote className="relative text-2xl md:text-3xl font-semibold italic text-center leading-relaxed bg-gradient-to-r from-green-500 to-teal-500 bg-clip-text text-transparent">
+        Matematika barcha fanlarning onasidir.
+      </blockquote>
+    </div>
+
+  </div>
+</section>
+
   );
 };
 
