@@ -117,9 +117,9 @@ const Hero = () => {
       </div>
 
       {/* Second Quote */}
-      <div className="relative p-10 rounded-3xl shadow-xl bg-white/80 backdrop-blur-md border border-primary/10 hover:scale-[1.02] transition-transform duration-300">
+      <div className="relative p-10 rounded-3xl shadow-xl bg-white/80 backdrop-blur-md border border-primary/10 hover:scale-[1.02] transition-transform duration-300 flex items-center justify-center">
         <span className="absolute top-6 left-6 text-7xl text-secondary opacity-100">“</span>
-        <blockquote className="relative font-[Playfair_Display] text-xl md:text-2xl lg:text-3xl italic text-center leading-relaxed bg-gradient-to-r from-green-500 to-teal-500 bg-clip-text text-transparent">
+        <blockquote className="relative font-[Playfair_Display] text-xl md:text-2xl lg:text-3xl italic text-center leading-relaxed bg-gradient-to-r from-green-500 to-teal-500 bg-clip-text text-transparent max-w-xl">
           Matematika - fanlar ichra shoh, uning sirlaridan bo'lingiz ogoh.
         </blockquote>
       </div>
