@@ -31,6 +31,7 @@ const Hero = () => {
   
 
   return (
+    <>
     <section id="home" className="relative min-h-screen pt-16 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-hero"></div>
@@ -125,7 +126,7 @@ const Hero = () => {
 
   </div>
 </section>
-
+  </>
   );
 };
 
