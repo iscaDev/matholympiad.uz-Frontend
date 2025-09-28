@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Users, BookOpen, FileText, Brain } from 'lucide-react';
-import { Card, CardContent } from '@/components/ui/card';
 import heroImage from '@/assets/hero-math.jpg';
 
 const Hero = () => {
@@ -103,28 +102,7 @@ const Hero = () => {
           <path d="M0,120 C200,80 400,40 600,60 C800,80 1000,100 1200,60 L1200,120 Z" fill="currentColor" />
         </svg>
       </div>
-      {/* Additional Quotes */}
-      <div className="grid md:grid-cols-2 gap-6 mt-8">
-          <Card className="bg-white/80 border-0 shadow-lg">
-            <CardContent className="p-6">
-                  <Quote className="w-8 h-8 text-purple-500 mb-4" />
-                  <blockquote className="text-lg font-medium text-gray-800 leading-relaxed italic">
-                    "Matematika barcha insonlar uchun buyuk motivatordir, chunki uning karyerasi noldan boshlanadi va hech qachon tugamaydi"
-                  </blockquote>
-            </CardContent>
-          </Card>
-              
-          <Card className="bg-white/80 border-0 shadow-lg">
-            <CardContent className="p-6">
-                  <Quote className="w-8 h-8 text-purple-500 mb-4" />
-                  <blockquote className="text-lg font-medium text-gray-800 leading-relaxed italic">
-                    "Matematika barcha fanlarning onasi"
-                  </blockquote>
-            </CardContent>
-          </Card>
-      </div>
     </section>
-
   );
 };
 
