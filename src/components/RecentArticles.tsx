@@ -6,7 +6,7 @@ const articles = [
     id: "1",
     title: "The Future of Web Development: Trends to Watch in 2025",
     excerpt: "Explore the cutting-edge technologies and methodologies that are shaping the future of web development, from AI integration to progressive web apps.",
-    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=500&fit=crop",
+    
     author: "Sarah Johnson",
     date: "2025-10-18",
     category: "Technology",
