@@ -32,10 +32,10 @@ const RecentArticles = () => {
         <div className="flex items-center justify-between mb-12">
           <div>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-2">
-              Latest Articles
+              Eng so'nggi maqolalar
             </h2>
             <p className="text-muted-foreground">
-              Fresh perspectives and insights from our writers
+              Matematika qanday qilib amaliyotda tadbiq etilishini kashf eting.
             </p>
           </div>
         </div>
@@ -105,7 +105,7 @@ const RecentArticles = () => {
         <div className="text-center mt-16">
           <a href="/articles">
             <button className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 text-lg font-medium rounded-xl shadow-[0_4px_20px_-4px_rgba(0,0,0,0.08)] hover:shadow-[0_8px_30px_-6px_rgba(0,0,0,0.12)] transition-all duration-300">
-              Read All Articles
+              Barcha maqolalarni ko'rish
               <ArrowRight className="w-5 h-5" />
             </button>
           </a>
