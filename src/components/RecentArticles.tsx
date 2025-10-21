@@ -1,34 +1,106 @@
-import { Calendar, Clock, ArrowRight } from "lucide-react";
+import { useEffect, useState } from "react"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
+import { Calendar, User, Eye, ArrowRight } from "lucide-react"
+import { Link } from "react-router-dom"
+import * as pdfjsLib from "pdfjs-dist"
+import pdfWorker from "pdfjs-dist/build/pdf.worker.min?url"
 
-// Article data - you can replace this with your actual articles
-const articles = [
-  {
-    id: "1",
-    title: "The Future of Web Development: Trends to Watch in 2025",
-    excerpt: "Explore the cutting-edge technologies and methodologies that are shaping the future of web development, from AI integration to progressive web apps.",
-    image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=500&fit=crop",
-    author: "Sarah Johnson",
-    date: "2025-10-18",
-    category: "Technology",
-    readTime: "5 min read"
-  },
-  {
-    id: "2",
-    title: "Mastering Remote Work: Tips for Productivity and Balance",
-    excerpt: "Discover practical strategies to maintain productivity, work-life balance, and mental health while working from home.",
-    image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=500&fit=crop",
-    author: "Michael Chen",
-    date: "2025-10-17",
-    category: "Productivity",
-    readTime: "7 min read"
+pdfjsLib.GlobalWorkerOptions.workerSrc = pdfWorker
+
+const BASE_URL = import.meta.env.VITE_API_URL
+
+type Article = {
+  id: number
+  title: string
+  content?: string
+  pdf_file?: string
+  author?: string
+  published_date: string
+  view_count: number
+  category: string
+}
+
+const getReadingTime = (text: string, wordsPerMinute = 200): number => {
+  const words = text.trim().split(/\s+/).length
+  return Math.max(1, Math.ceil(words / wordsPerMinute))
+}
+
+const truncateText = (text: string, maxLength = 100) => {
+  if (text.length <= maxLength) return text
+  return text.slice(0, maxLength) + "..."
+}
+
+const getPdfText = async (url: string): Promise<string> => {
+  try {
+    const loadingTask = pdfjsLib.getDocument(url)
+    const pdf = await loadingTask.promise
+    let fullText = ""
+
+    for (let i = 1; i <= pdf.numPages; i++) {
+      const page = await pdf.getPage(i)
+      const textContent = await page.getTextContent()
+      const text = textContent.items.map((item: any) => item.str).join(" ")
+      fullText += " " + text
+    }
+
+    return fullText.trim()
+  } catch (e) {
+    console.error("PDF matnini olishda xatolik:", e)
+    return ""
   }
-];
+}
 
 const RecentArticles = () => {
+  const [articles, setArticles] = useState<Article[]>([])
+  const [loading, setLoading] = useState(true)
+  const [previews, setPreviews] = useState<Record<number, string>>({})
+  const [readingTimes, setReadingTimes] = useState<Record<number, number>>({})
+
+  useEffect(() => {
+    const fetchArticles = async () => {
+      try {
+        const res = await fetch(`${BASE_URL}/articles/all/`)
+        const data = await res.json()
+        setArticles(data)
+
+        const previewMap: Record<number, string> = {}
+        const readTimeMap: Record<number, number> = {}
+
+        for (const article of data) {
+          if (article.pdf_file) {
+            const fullText = await getPdfText(`${BASE_URL}${article.pdf_file}`)
+            previewMap[article.id] = fullText
+              ? truncateText(fullText, 100)
+              : "(PDF fayl)"
+            readTimeMap[article.id] = fullText
+              ? getReadingTime(fullText)
+              : 3
+          } else if (article.content) {
+            previewMap[article.id] = truncateText(article.content, 100)
+            readTimeMap[article.id] = getReadingTime(article.content)
+          } else {
+            previewMap[article.id] = "Maqola kontenti mavjud emas"
+            readTimeMap[article.id] = 3
+          }
+        }
+
+        setPreviews(previewMap)
+        setReadingTimes(readTimeMap)
+      } catch (error) {
+        console.error("Maqolalarni olishda xatolik:", error)
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    fetchArticles()
+  }, [])
+
   return (
     <section className="py-16 px-4">
       <div className="container mx-auto max-w-7xl">
-        {/* Section Header */}
         <div className="flex items-center justify-between mb-12">
           <div>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-2">
@@ -40,79 +112,98 @@ const RecentArticles = () => {
           </div>
         </div>
 
-        {/* Articles Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {articles.map((article) => (
-            <a
-              key={article.id}
-              href="/articles"
-              className="group block"
-            >
-              <article className="h-full bg-card rounded-xl overflow-hidden border border-border transition-all duration-300 hover:shadow-[0_8px_30px_-6px_rgba(0,0,0,0.12)] hover:-translate-y-1">
-                {/* Article Image */}
-                <div className="relative overflow-hidden aspect-[16/10]">
-                  <img 
-                    src={article.image} 
-                    alt={article.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <span className="absolute top-4 left-4 bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm font-medium">
-                    {article.category}
-                  </span>
-                </div>
-                
-                {/* Article Content */}
-                <div className="p-6 flex flex-col">
-                  {/* Meta Info */}
-                  <div className="flex items-center gap-4 text-sm text-muted-foreground mb-3">
-                    <span className="flex items-center gap-1">
-                      <Calendar className="w-4 h-4" />
-                      {new Date(article.date).toLocaleDateString('en-US', { 
-                        month: 'short', 
-                        day: 'numeric', 
-                        year: 'numeric' 
-                      })}
-                    </span>
-                    <span className="flex items-center gap-1">
-                      <Clock className="w-4 h-4" />
-                      {article.readTime}
-                    </span>
+          {articles.slice(-2).map((article) => {
+            const previewText = previews[article.id] || "(Yuklanmoqda...)"
+            const readTime = readingTimes[article.id] || 3
+
+            return (
+              <Card
+                key={article.id}
+                className="group cursor-pointer hover:scale-105 transition-all duration-300 hover:shadow-large border-2 hover:border-primary/20 bg-gradient-card overflow-hidden"
+              >
+                <CardHeader className="pb-3">
+                  <div className="flex justify-between items-start mb-3">
+                    <Badge variant="outline" className="text-xs">
+                      {article.category}
+                    </Badge>
+                    <div className="flex items-center space-x-1 text-xs text-muted-foreground">
+                      <Eye className="w-3 h-3" />
+                      <span>{article.view_count}</span>
+                    </div>
                   </div>
-                  
-                  {/* Title */}
-                  <h3 className="text-xl font-bold text-card-foreground mb-3 group-hover:text-primary transition-colors">
+
+                  <CardTitle className="text-lg leading-tight group-hover:text-primary transition-colors mb-3">
                     {article.title}
-                  </h3>
-                  
-                  {/* Excerpt */}
-                  <p className="text-sm text-muted-foreground mb-4 line-clamp-2">
-                    {article.excerpt}
+                  </CardTitle>
+
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {previewText}
                   </p>
-                  
-                  {/* Author */}
-                  <div className="mt-auto pt-4 border-t border-border">
-                    <span className="text-sm font-medium text-card-foreground">
-                      By {article.author}
-                    </span>
-                  </div>
-                </div>
-              </article>
-            </a>
-          ))}
+                </CardHeader>
+
+                <CardContent>
+                  {article.author ? (
+                    <>
+                      <div className="flex items-center justify-between text-xs text-muted-foreground mb-4">
+                        <div className="flex items-center space-x-2">
+                          <User className="w-3 h-3" />
+                          <span>{article.author}</span>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                          <Calendar className="w-3 h-3" />
+                          <span>
+                            {new Date(article.published_date).toLocaleDateString(
+                              "uz-UZ"
+                            )}
+                          </span>
+                        </div>
+                      </div>
+                      <div className="flex items-center justify-between mb-4">
+                        <span className="text-xs text-muted-foreground">
+                          {readTime} daqiqa o‘qish
+                        </span>
+                      </div>
+                    </>
+                  ) : (
+                    <div className="flex items-center justify-between text-xs text-muted-foreground mb-4">
+                      <div className="flex items-center space-x-2">
+                        <Calendar className="w-3 h-3" />
+                        <span>
+                          {new Date(article.published_date).toLocaleDateString(
+                            "uz-UZ"
+                          )}
+                        </span>
+                      </div>
+                      <span className="text-xs text-muted-foreground">
+                        {readTime} daqiqa o‘qish
+                      </span>
+                    </div>
+                  )}
+
+                  <Link to={`/articles/${article.id}`}>
+                    <Button className="w-full bg-gradient-primary hover:shadow-glow group-hover:scale-105 transition-all">
+                      O‘qishni davom ettirish
+                      <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                    </Button>
+                  </Link>
+                </CardContent>
+              </Card>
+            )
+          })}
         </div>
 
-        {/* Read All Button */}
         <div className="text-center mt-16">
           <a href="/articles">
             <button className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 text-lg font-medium rounded-xl shadow-[0_4px_20px_-4px_rgba(0,0,0,0.08)] hover:shadow-[0_8px_30px_-6px_rgba(0,0,0,0.12)] transition-all duration-300">
-              Barcha maqolalarni ko'rish
+              Barcha maqolalarni ko‘rish
               <ArrowRight className="w-5 h-5" />
             </button>
           </a>
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default RecentArticles;
+export default RecentArticles
