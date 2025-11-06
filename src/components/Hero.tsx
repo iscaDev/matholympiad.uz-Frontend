@@ -98,8 +98,8 @@ const Hero = () => {
       </div>
 
       {/* Bottom Wave */}
-      <div className="absolute bottom-0 left-0 right-0 translate-y-4">
-        <svg viewBox="0 0 1200 120" className="w-full h-auto text-background opacity-90">
+      <div className="absolute bottom-0 left-0 right-0 translate-y-[-10px]">
+        <svg viewBox="0 0 1200 120" className="w-full h-auto text-background">
           <path d="M0,120 C200,80 400,40 600,60 C800,80 1000,100 1200,60 L1200,120 Z" fill="currentColor" />
         </svg>
       </div>
