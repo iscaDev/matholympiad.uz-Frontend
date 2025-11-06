@@ -65,8 +65,8 @@ const Hero = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 animate-fade-in-up" style={{animationDelay: '0.2s'}}>
-            <Button 
-              href='/tests'
+            <Button
+              asChild
               size="lg" 
               className="bg-secondary text-secondary-foreground hover:bg-secondary/90 hover:shadow-glow px-8 py-4 text-lg font-semibold"
             >
