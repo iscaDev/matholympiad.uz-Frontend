@@ -163,7 +163,7 @@ const quickQuestions = [
                             : 'bg-background border shadow-soft mr-8'
                         }`}
                       >
-                        <p className="text-sm leading-relaxed">{chat.message}</p>
+                        <p className="text-sm leading-relaxed whitespace-pre-line">{chat.message}</p>
                         <p
                           className={`text-xs mt-2 ${
                             chat.type === 'user'
