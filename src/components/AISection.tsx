@@ -46,8 +46,8 @@ const quickQuestions = [
      if (res.status === 401) {
   console.warn("Token yaroqsiz yoki muddati tugagan. Chat tarixi saqlanmaydi.");
 
-  localStorage.removeItem("access_token");
-  localStorage.removeItem("refresh_token");
+  localStorage.removeItem("access");
+  localStorage.removeItem("refresh");
 
   window.location.href = "/login";   
 
