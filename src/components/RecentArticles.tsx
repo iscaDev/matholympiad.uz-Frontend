@@ -113,7 +113,7 @@ const RecentArticles = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {articles.slice(0, 2).map((article) => {
+          {articles.slice(-2).map((article) => {
             const previewText = previews[article.id] || "(Yuklanmoqda...)"
             const readTime = readingTimes[article.id] || 3
 
