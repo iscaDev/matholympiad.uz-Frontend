@@ -43,11 +43,16 @@ const quickQuestions = [
           Authorization: `Bearer ${token}`,
         },
       })
-      if (res.status === 401) {
-    console.warn("Token yaroqsiz yoki muddati tugagan. Chat tarixi saqlanmaydi.");
-        setChatHistory([]); 
-    return; 
-  }
+     if (res.status === 401) {
+  console.warn("Token yaroqsiz yoki muddati tugagan. Chat tarixi saqlanmaydi.");
+
+  localStorage.removeItem("access_token");
+  localStorage.removeItem("refresh_token");
+
+  window.location.href = "/login";   
+
+  return;
+}
       const data = await res.json()
       setChatHistory(data)
     } catch (err) {
