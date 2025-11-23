@@ -43,6 +43,11 @@ const quickQuestions = [
           Authorization: `Bearer ${token}`,
         },
       })
+      if (res.status === 401) {
+    console.warn("Token yaroqsiz yoki muddati tugagan. Chat tarixi saqlanmaydi.");
+        setChatHistory([]); 
+    return; 
+  }
       const data = await res.json()
       setChatHistory(data)
     } catch (err) {
