@@ -18,7 +18,7 @@ const Hero = () => {
           { icon: BookOpen, label: 'Kitoblar', value: data.total_books, color: 'text-yellow-400' },
           { icon: FileText, label: 'Maqolalar', value: data.total_articles, color: 'text-accent' },
           { icon: Brain, label: 'Testlar', value: data.total_tests, color: 'text-success' }, // hozircha kommentda
-          { icon: Users, label: 'Talabalar', value: data.total_users + 250, color: 'text-secondary' },
+          { icon: Users, label: 'Talabalar', value: data.total_users + 550, color: 'text-secondary' },
         ];
 
         setStats(mapped);
