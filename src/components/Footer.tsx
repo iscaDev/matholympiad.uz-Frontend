@@ -166,7 +166,7 @@ const Footer = () => {
             {/* Copyright */}
             <div className="text-center md:text-right">
               <p className="text-sm text-primary-foreground/80">
-                © 2025 MathOlympiad.Uz. Barcha huquqlar himoyalangan.
+                © 2025 MathOlympiad.Uz.
               </p>
             </div>
           </div>
